@@ -166,12 +166,6 @@ if st.button("Identifikasi"):
             st.markdown(h)
     else:
         st.warning("Tidak ada nilai yang dikenali.")
-
-   
-           
-                
-        
-
 # Halaman Pembuat Aplikasi
 elif menu == "👨‍💻 Pembuat Aplikasi":
     st.markdown("## 👨‍💻 Tentang Pembuat Aplikasi")
