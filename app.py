@@ -19,8 +19,7 @@ if menu == "🏠 Beranda":
     <div style='text-align: center;'>
         <h2>👋 Selamat Datang di Aplikasi Spektrum IR!</h2>
         <p style='font-size:18px;'>Temukan gugus fungsi dari spektrum IR dengan mudah dan cepat.</p>
-        <img src='https://i.imgur.com/mg8OaRG.png' width='300'/>
-    </div>
+        
     """, unsafe_allow_html=True)
 
     st.markdown("---")
