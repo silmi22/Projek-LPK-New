@@ -35,12 +35,13 @@ if menu == "🏠 Beranda":
 elif menu == "📖 Teori IR":
     st.markdown("## 🧪 Teori Dasar Spektroskopi Inframerah (IR)")
     st.markdown("""
-Spektroskopi Inframerah (IR) adalah teknik untuk mengidentifikasi gugus fungsi dalam senyawa kimia berdasarkan interaksi antara cahaya inframerah dan molekul.
+Spektroskopi Inframerah (IR) adalah teknik untuk mengidentifikasi gugus fungsi dalam senyawa kimia berdasarkan interaksi antara cahaya inframerah dan molekul. Jenis analisis ini dapat digunakan untuk mengarakterisasi sampel dalam bentuk cairan, larutan, pasta, bubuk, film, serat, dan gas. Analisis ini juga memungkinkan untuk menganalisis material di permukaan substrat.
 
 ### 🔬 Prinsip Dasar
 Ketika molekul menyerap sinar inframerah, energi tersebut menyebabkan ikatan antar atom bergetar. Jenis getaran ini dapat berupa:
 - Regangan (stretching)  
 - Tekukan (bending)
+Sampel akan dikenai radiasi inframerah (IR). Radiasi IR ini kemudian memengaruhi getaran atom dari molekul dalam sampel, menghasilkan penyerapan dan/atau transmisi energi yang spesifik.
 
 ### 📏 Bilangan Gelombang (cm⁻¹)
 Setiap gugus fungsi menyerap energi IR pada rentang bilangan gelombang tertentu.
