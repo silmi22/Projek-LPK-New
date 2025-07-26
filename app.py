@@ -18,7 +18,7 @@ if menu == "🏠 Beranda":
     st.markdown("""
     <div style='text-align: center;'>
         <h2>👋 Selamat Datang di Aplikasi Spektrum IR!</h2>
-        <p style='font-size:18px;'>Temukan gugus fungsi dari spektrum IR dengan mudah dan cepat.</p>
+        <p style='font-size:18px;'>Temukan gugus fungsi dari spektrum Infra Red dengan mudah dan cepat.</p>
        
     """, unsafe_allow_html=True)
 
@@ -36,13 +36,13 @@ if menu == "🏠 Beranda":
 elif menu == "📖 Teori IR":
     st.markdown("## 🧪 Teori Dasar Spektroskopi Inframerah (IR)")
     st.markdown("""
-Spektroskopi Inframerah (IR) adalah teknik untuk mengidentifikasi gugus fungsi dalam senyawa kimia berdasarkan interaksi antara cahaya inframerah dan molekul.
+Spektroskopi Inframerah (IR) adalah teknik untuk mengidentifikasi gugus fungsi dalam senyawa kimia berdasarkan interaksi antara cahaya inframerah dan molekul. Jenis analisis ini dapat digunakan untuk mengarakterisasi sampel dalam bentuk cairan, larutan, pasta, bubuk, film, serat, dan gas. Analisis ini juga memungkinkan untuk menganalisis material di permukaan substrat.
 
 ### 🔬 Prinsip Dasar
 Ketika molekul menyerap sinar inframerah, energi tersebut menyebabkan ikatan antar atom bergetar. Jenis getaran ini dapat berupa:
 - *Regangan (stretching)*: perubahan panjang ikatan  
 - *Tekukan (bending)*: perubahan sudut ikatan  
-
+Sampel akan dikenai radiasi inframerah (IR). Radiasi IR ini kemudian memengaruhi getaran atom dari molekul dalam sampel, menghasilkan penyerapan dan/atau transmisi energi yang spesifik.
 ### 📏 Bilangan Gelombang (cm⁻¹)
 Setiap gugus fungsi menyerap energi IR pada rentang bilangan gelombang tertentu.
 
@@ -91,26 +91,51 @@ Gunakan dua input jika ingin mendeteksi gugus kompleks seperti asam karboksilat.
     nilai1 = st.number_input("Panjang gelombang IR pertama (cm⁻¹)", min_value=400, max_value=4000, step=1)
     nilai2 = st.number_input("Panjang gelombang IR kedua (opsional)", min_value=0, max_value=4000, step=1)
 
-    gugus_fungsi = [
-        {"rentang": (1820, 1660), "gugus": "C=O (Karbonil: Aldehid, Keton, Ester, Asam Karboksilat, Amida, Anhidrida)"},
-        {"rentang": (3400, 2400), "gugus": "O–H (Asam Karboksilat) – sangat lebar"},
-        {"rentang": (3600, 3300), "gugus": "O–H (Alkohol/Fenol)"},
-        {"rentang": (3500, 3500), "gugus": "N–H (Amina/Amida)"},
-        {"rentang": (2850, 2750), "gugus": "C–H (Aldehid) – dua pita lemah"},
-        {"rentang": (1810, 1710), "gugus": "C=O (Anhidrida) – dua pita"},
-        {"rentang": (1300, 1000), "gugus": "C–O (Ester, Alkohol, Eter, Asam Karboksilat)"},
-        {"rentang": (1650, 1650), "gugus": "C=C (Alkena)"},
-        {"rentang": (1650, 1450), "gugus": "C=C (Aromatik)"},
-        {"rentang": (3000, 3000), "gugus": "C–H aromatik/vinil"},
-        {"rentang": (3000, 3000), "gugus": "C–H alifatik"},
-        {"rentang": (2250, 2250), "gugus": "C≡N (Nitril)"},
-        {"rentang": (2150, 2150), "gugus": "C≡C (Alkuna)"},
-        {"rentang": (3300, 3300), "gugus": "≡C–H (asetilenik)"},
-        {"rentang": (1600, 1500), "gugus": "NO₂ – pita kuat"},
-        {"rentang": (1390, 1300), "gugus": "NO₂ – pita tambahan"},
-        {"rentang": (1450, 1450), "gugus": "C–H bending (CH₃, CH₂)"},
-        {"rentang": (1375, 1375), "gugus": "C–H bending (CH₃, CH₂)"},
-    ]
+    # --- Data Gugus Fungsi (untuk tampilan) ---
+gugus_fungsi_display = [
+    {"rentang": "3700–3584", "gugus": "O–H bebas - non-terikat H - alkohol"},
+    {"rentang": "3550–3200", "gugus": "O–H terikat H - alkohol - asam karboksilat"},
+    {"rentang": "3500–3300", "gugus": "N–H - amina - amida"},
+    {"rentang": "3400–3250", "gugus": "≡C–H - alkuna terminal"},
+    {"rentang": "3100–3000", "gugus": "C–H - sp² - alkena - aromatik"},
+    {"rentang": "3000–2850", "gugus": "C–H - sp³ - alkana"},
+    {"rentang": "2260–2220", "gugus": "C≡N - nitril"},
+    {"rentang": "2150–2100", "gugus": "C≡C - alkuna"},
+    {"rentang": "1870–1800", "gugus": "C=O - anhidrida asam"},
+    {"rentang": "1750–1735", "gugus": "C=O - ester - asam karboksilat"},
+    {"rentang": "1740–1720", "gugus": "C=O - aldehid - keton"},
+    {"rentang": "1720–1680", "gugus": "C=O - umum - aldehid - keton - asam - ester - amida"},
+    {"rentang": "1680–1600", "gugus": "C=C - alkena - aromatik"},
+    {"rentang": "1600–1500", "gugus": "C=C - aromatik"},
+    {"rentang": "1550–1510", "gugus": "N–O - NO₂ simetris"},
+    {"rentang": "1370–1340", "gugus": "N–O - NO₂ asimetris"},
+    {"rentang": "1450–1375", "gugus": "C–H bending - CH₃ - CH₂"},
+    {"rentang": "1300–1000", "gugus": "C–O stretching - alkohol - ester - asam"},
+    {"rentang": "1000–650",  "gugus": "C–H out-of-plane - aromatik"},
+]
+
+# --- Data Gugus Fungsi (untuk logika) ---
+gugus_fungsi_numerik = [
+    {"rentang": (3700, 3584), "gugus": "O–H bebas - non-terikat H - alkohol"},
+    {"rentang": (3550, 3200), "gugus": "O–H terikat H - alkohol - asam karboksilat"},
+    {"rentang": (3500, 3300), "gugus": "N–H - amina - amida"},
+    {"rentang": (3400, 3250), "gugus": "≡C–H - alkuna terminal"},
+    {"rentang": (3100, 3000), "gugus": "C–H - sp² - alkena - aromatik"},
+    {"rentang": (3000, 2850), "gugus": "C–H - sp³ - alkana"},
+    {"rentang": (2260, 2220), "gugus": "C≡N - nitril"},
+    {"rentang": (2150, 2100), "gugus": "C≡C - alkuna"},
+    {"rentang": (1870, 1800), "gugus": "C=O - anhidrida asam"},
+    {"rentang": (1750, 1735), "gugus": "C=O - ester - asam karboksilat"},
+    {"rentang": (1740, 1720), "gugus": "C=O - aldehid - keton"},
+    {"rentang": (1720, 1680), "gugus": "C=O - umum - aldehid - keton - asam - ester - amida"},
+    {"rentang": (1680, 1600), "gugus": "C=C - alkena - aromatik"},
+    {"rentang": (1600, 1500), "gugus": "C=C - aromatik"},
+    {"rentang": (1550, 1510), "gugus": "N–O - NO₂ simetris"},
+    {"rentang": (1370, 1340), "gugus": "N–O - NO₂ asimetris"},
+    {"rentang": (1450, 1375), "gugus": "C–H bending - CH₃ - CH₂"},
+    {"rentang": (1300, 1000), "gugus": "C–O stretching - alkohol - ester - asam"},
+    {"rentang": (1000, 650),  "gugus": "C–H out-of-plane - aromatik"},
+
 
     if st.button("Identifikasi"):
         hasil = []
