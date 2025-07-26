@@ -136,34 +136,41 @@ gugus_fungsi_logika = [
     {"rentang": (1300, 1000), "gugus": "C–O stretching - alkohol - ester - asam"},
     {"rentang": (1000, 650),  "gugus": "C–H out-of-plane - aromatik"},
 ]
+if st.button("Identifikasi"):
+    hasil = []
 
-    if st.button("Identifikasi"):
-        hasil = []
+    # Deteksi asam karboksilat
+    if (
+        (1820 >= nilai1 >= 1660 and 3400 >= nilai2 >= 2400) or
+        (1820 >= nilai2 >= 1660 and 3400 >= nilai1 >= 2400)
+    ):
+        hasil.append("🔴 Kemungkinan besar: Asam Karboksilat (–COOH)")
 
-        if (
-            (1820 >= nilai1 >= 1660 and 3400 >= nilai2 >= 2400) or
-            (1820 >= nilai2 >= 1660 and 3400 >= nilai1 >= 2400)
-        ):
-            hasil.append("🔴 Kemungkinan besar: Asam Karboksilat (–COOH)")
+    # Pencocokan gugus fungsi
+    for nilai in [nilai1, nilai2]:
+        if nilai == 0:
+            continue
+        cocok = False
+        for item in gugus_fungsi_numerik:
+            low, high = item["rentang"]
+            if low >= nilai >= high or high >= nilai >= low:
+                hasil.append(f"✓ {nilai} cm⁻¹ → {item['gugus']}")
+                cocok = True
+        if not cocok:
+            hasil.append(f"✖ {nilai} cm⁻¹ → Tidak cocok dengan data referensi")
 
-        for nilai in [nilai1, nilai2]:
-            if nilai == 0:
-                continue
-            cocok = False
-            for item in gugus_fungsi:
-                low, high = item["rentang"]
-                if low >= nilai >= high or low <= nilai <= high:
-                    hasil.append(f"✓ {nilai} cm⁻¹ → {item['gugus']}")
-                    cocok = True
-            if not cocok:
-                hasil.append(f"✖ {nilai} cm⁻¹ → Tidak dikenali dalam daftar.")
+    # Tampilkan hasil
+    if hasil:
+        st.markdown("### Hasil Identifikasi:")
+        for h in hasil:
+            st.markdown(h)
+    else:
+        st.warning("Tidak ada nilai yang dikenali.")
 
-        if hasil:
-            st.markdown("### Hasil Identifikasi:")
-            for h in hasil:
-                st.markdown(h)
-        else:
-            st.warning("Tidak ada nilai yang dikenali.")
+   
+           
+                
+        
 
 # Halaman Pembuat Aplikasi
 elif menu == "👨‍💻 Pembuat Aplikasi":
