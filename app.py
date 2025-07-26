@@ -114,8 +114,6 @@ gugus_fungsi_numerik = [
     {"rentang": (1000, 650),  "gugus": "C–H out-of-plane - aromatik"},
 ]
     
-]
-
 # --- Data Gugus Fungsi (untuk logika) ---
 gugus_fungsi_logika = [
     {"rentang": (3700, 3584), "gugus": "O–H bebas - non-terikat H - alkohol"},
