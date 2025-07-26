@@ -88,8 +88,8 @@ Masukkan satu atau dua nilai panjang gelombang IR (cm⁻¹) untuk mengidentifika
 Gunakan dua input jika ingin mendeteksi gugus kompleks seperti asam karboksilat.
 """)
 
-    nilai1 = st.number_input("Panjang gelombang IR pertama (cm⁻¹)", min_value=400, max_value=4000, step=1)
-    nilai2 = st.number_input("Panjang gelombang IR kedua (opsional)", min_value=0, max_value=4000, step=1)
+    nilai1 = st.number_input("Bilangan gelombang Infra Red pertama (cm⁻¹)", min_value=650, max_value=3700, step=1)
+    nilai2 = st.number_input("Bilangan gelombang Infra Red kedua (opsional)", min_value=0, max_value=3700, step=1)
 
     # --- Data Gugus Fungsi (untuk tampilan) ---
 gugus_fungsi_display = [
