@@ -170,7 +170,6 @@ if st.button("Identifikasi"):
 # Halaman Pembuat Aplikasi
 elif menu == "👨‍💻 Pembuat Aplikasi":
     st.markdown("## 👨‍💻 Tentang Pembuat Aplikasi")
-    st.markdown("""
 Aplikasi ini dibuat oleh:
 
 - Annisa Balqis  
