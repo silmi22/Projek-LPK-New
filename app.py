@@ -135,6 +135,8 @@ gugus_fungsi_logika = [
     {"rentang": (1450, 1375), "gugus": "C–H bending - CH₃ - CH₂"},
     {"rentang": (1300, 1000), "gugus": "C–O stretching - alkohol - ester - asam"},
     {"rentang": (1000, 650),  "gugus": "C–H out-of-plane - aromatik"},
+]
+    
 
 
     if st.button("Identifikasi"):
