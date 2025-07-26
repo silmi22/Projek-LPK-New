@@ -115,7 +115,6 @@ gugus_fungsi_display = [
 ]
 
 # --- Data Gugus Fungsi (untuk logika) ---
-gugus_fungsi_numerik = [
     {"rentang": (3700, 3584), "gugus": "O–H bebas - non-terikat H - alkohol"},
     {"rentang": (3550, 3200), "gugus": "O–H terikat H - alkohol - asam karboksilat"},
     {"rentang": (3500, 3300), "gugus": "N–H - amina - amida"},
