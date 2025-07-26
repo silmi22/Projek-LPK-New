@@ -185,5 +185,5 @@ Aplikasi ini dibuat oleh:
 - *Silmi*
 
 📍 *Institusi*: Politeknik AKA Bogor  
-🎯 *Tujuan: Mendukung kegiatan praktikum dan tugas akhir pada mata kuliah **Kimia Instrumental* dengan bantuan aplikasi berbasis Python dan Streamlit.
+🎯 *Tujuan: Membantu Pengguna dalam mengidentifikasi gugus fungsi dengan bantuan aplikasi berbasis Python dan Streamlit.
 """)
