@@ -2,6 +2,28 @@ import streamlit as st
 
 # Atur halaman
 st.set_page_config(page_title="Aplikasi IR Spektrum", page_icon="🌈")
+st.set_page_config(page_title="Aplikasi IR Spektrum", page_icon="🌈")
+
+# Tambahkan CSS background DI SINI, langsung setelah set_page_config
+st.markdown(
+    """
+    <style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1616593968993-c2208f86f485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    .stApp {
+        background-color: rgba(255, 255, 255, 0.90);
+        padding: 2rem;
+        border-radius: 12px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Sidebar navigasi
 menu = st.sidebar.selectbox(
