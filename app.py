@@ -30,7 +30,7 @@ if menu == "🏠 Beranda":
     - Pengajar yang ingin memberikan alat bantu ajar  
     - Peneliti atau analis spektrum senyawa organik
     """)
-    st.success("📌 Silakan pilih menu di sidebar kiri untuk mulai menggunakan aplikasi.")
+    ("📌 Silakan pilih menu di sidebar kiri untuk mulai menggunakan aplikasi.")
 
 # Halaman Teori IR
 elif menu == "📖 Teori IR":
