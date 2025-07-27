@@ -84,7 +84,7 @@ elif menu == "🎯 Tujuan Aplikasi":
 elif menu == "🔍 Identifikasi IR":
     st.subheader("🔍 Identifikasi Gugus Fungsi Berdasarkan Spektrum IR")
     st.markdown("""
-Masukkan satu atau dua nilai panjang gelombang IR (cm⁻¹) untuk mengidentifikasi kemungkinan gugus fungsi.  
+Masukkan satu atau dua nilai Bilangan gelombang IR (cm⁻¹) untuk mengidentifikasi kemungkinan gugus fungsi.  
 Gunakan dua input jika ingin mendeteksi gugus kompleks seperti asam karboksilat.
 """)
 
